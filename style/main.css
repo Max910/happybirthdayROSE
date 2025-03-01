@@ -5,6 +5,11 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  
+
 }
 
 .song {
@@ -42,7 +47,7 @@ body {
 }
 
 .four .text-box {
-  border: 3px solid #aaa;
+  border: 3px solid #000000;
   border-radius: 5px;
   margin: 0 auto;
   padding: 10px;
@@ -60,10 +65,10 @@ body {
 }
 
 .text-box .fake-btn {
-  background-color: rgb(21, 161, 237);
-  border-radius: 3px;
+  background-color: rgb(0, 132, 255);
+  border-radius: 4px;
   bottom: -50px;
-  color: #fff;
+  color: #fff7f7;
   padding: .5rem 1rem;
   position: absolute;
   right: 5px;

@@ -7,7 +7,7 @@ body {
   margin: 0;
   background-color: #ffffff;
 background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
   
 
 }
@@ -108,7 +108,7 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.
 
 .six img {
   display: inline-block;
-  height: 350px;
+  height: 450px;
   max-width: 100%;
   /* height: auto; */
 }
@@ -209,9 +209,10 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.
 }
 
 .wish-hbd {
-  font-size: 3em;
-  margin: 0;
-  text-transform: uppercase;
+  font-size: 5em;
+  margin: 1;
+  top: 80vh;
+  /* text-transform: uppercase; */
 }
 
 .wish h5 {
@@ -227,7 +228,7 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.
 
 #replay {
   cursor: pointer;
-  z-index: 3;
+  z-index: 5;
 }
 
 /* Media Queries */
@@ -295,3 +296,4 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.
     font-weight: lighter;
   }
 }
+

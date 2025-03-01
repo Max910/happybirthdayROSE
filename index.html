@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style/main.css" />
   <!-- My Style -->
   <!-- <style>
     body {
@@ -30,6 +29,7 @@
 
 
 
+  <link rel="stylesheet" href="./style/main.css" />
 </head>
 
 <body>
@@ -105,7 +105,7 @@
             <img src="./img/ROSE.jpg" alt="profile" class="profile-picture" id="imagePath"/>
             <img src="img/hat.svg" alt="hat" class="hat" />
             <div class="wish">
-                <h2 class="wish-hbd">Happy Birthday ROSE! </h2>
+                <h1 class="wish-hbd">Happy Birthday ROSE! </h1>
                 <h5 id="wishText" background-color = "black";>HERE'S TO MORE OF US! 🥂</h5>
             </div>
         </div>
@@ -196,7 +196,12 @@
             balloon.classList.add("balloon");
             balloon.style.left = Math.random() * window.innerWidth + "px";
             balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            balloon.onclick = () => balloon.remove(); // Pop when clicked
+            balloon.onclick = () => {
+                balloon.style.transition = "transform 0.2s, opacity 0.2s";
+                balloon.style.transform = "scale(1.5)";
+                balloon.style.opacity = "0";
+                setTimeout(() => balloon.remove(), 200);
+            };
             document.body.appendChild(balloon);
             setTimeout(() => balloon.remove(), 5000);
         }
@@ -226,44 +231,47 @@
 </html>
 
 <style>
-    body {
-        background-color: #00000000;
-        overflow: hidden;
-        margin: 0;
-    }
-    .wish {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        color: white;
-        text-align: center;
-    }
-    .balloon {
-        position: absolute;
-        bottom: -100px;
-        width: 50px;
-        height: 70px;
-        background-color: red;
-        border-radius: 50%;
-        animation: floatUp 5s linear forwards;
-    }
-    @keyframes floatUp {
-        from { transform: translateY(0); }
-        to { transform: translateY(-100vh); opacity: 0; }
-    }
-    .firework {
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        background-color: yellow;
-        border-radius: 50%;
-        animation: explode 1.5s ease-out forwards;
-    }
-    @keyframes explode {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(3); opacity: 0.8; }
-        100% { transform: scale(0); opacity: 0; }
-    }
+   body {
+            /* background-color: #00000000; */
+            overflow: hidden;
+            margin: 0;
+        }
+        .wish {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            animation: floatUp 5s linear forwards;
+            cursor: pointer;
+            z-index: 3;
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 1.5s ease-out forwards;
+            z-index: 1;
+        }
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(3); opacity: 0.8; }
+            100% { transform: scale(0); opacity: 0; }
+        }
 </style>
